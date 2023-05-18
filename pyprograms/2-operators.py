@@ -4,21 +4,17 @@ Arithmetic - +,-,*,/,//,%
 Comparision operator - >,>=,<,<=,==,!=
 Logical operators - and or not
 """
-
 print("Arithmetic Operators")
-
 num1=100
 num2=200
 result = num1+num2
 print("Result of addition of ",num1," and ",num2," is ",result)
-
 num3=9
 num4=2
 result =num3/num4
 print(num3," / ",num4," = ",result)
 result =num3//num4
 print(num3," // ",num4," = ",result)
-
 result =num3%num4
 print(num3," % ",num4," = ",result)
 print("Comparision")
