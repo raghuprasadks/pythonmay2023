@@ -1,0 +1,4 @@
+Python
+1. Python data types
+2. Operators
+3. Loops

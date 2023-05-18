@@ -1,0 +1,29 @@
+This course builds upon the foundations of programming and computation by introducing and studying the data structures and programming language features that support the design and construction of large-scale software systems. It introduces the foundations of object-oriented programming, the design and analysis of efficient algorithms using important data structures, and programming techniques that support reusable and modular program components, including data abstraction, polymorphism, and higher-order functions. Topics from object-oriented programming include classes, objects, inheritance, methods, message passing, static and dynamic type checking. These topics form the core of most object-oriented languages and provide a foundation for learning more advanced language topics. Data structures capture the common organization of many kinds of data arising in the design of efficient solutions to computational problems. Specific data structures covered include stacks, queues, trees, graphs and linked lists. The design and analysis of efficient algorithms using these data structures provide a foundation for the study of computing, where understanding the complexity of a problem and the availability of efficient solutions are essential skills. Finally, topics including higher-order functional programming, data abstraction and parametric polymorphism, as well as principles from object-oriented programming, come together to support the design and implementation of modular, reusable and robust code.
+
+Syllabus:
+
+Course Description: CMPSC 132 builds upon the foundations of programming and computation by introducing and studying the data structures and programming language features that support the design and construction of large-scale software systems. It introduces the foundations of object-oriented programming, the design and analysis of efficient algorithms using important data structures, and programming techniques that support reusable and modular program components, including data abstraction, polymorphism, and higher-order functions. This course builds upon the foundations of programming and computation by introducing and studying:
+
+The data structures and programming language features that support the design and construction of large-scale software systems.
+Data structures for the design and analysis of efficient algorithms
+Object-oriented and functional programming in Python
+Abstract data types
+Elementary complexity theory
+Searching and Sorting algorithms
+Elementary programming language theory
+Learning Objectives: By the end of this course students will be able to:
+
+Design and implement computational solutions to problems in standard style.
+Minimize and remove program errors.
+Analyze the efficiency of algorithms. (“Big-O” run time analysis of algorithms)
+Balance between metrics such as short running time and program conciseness.
+Design and implement a software system composed of modular reusable software components.
+Write, debug and predict the behavior of programs.
+Course Materials
+
+Required Software: Python 3.6 or later from https://www.python.org/downloads/, or you can also install Visual Studio Code, PyCharm, IDLE, etc., just be sure it runs a Python 3 version. Older versions of Python are not permitted to use for any class activities.
+Textbook and References:
+Data Structures and Algorithms in Python by Tamassia and Goldwasser (not required) **  
+Python 3 Documentation https://docs.python.org/3/
+All handouts, homework, video lectures and class announcements will be posted on Canvas. We will use Microsoft Teams for class discussion and Gradescope for assignment submission.
+** An online version of the textbook is available at no cost as a Penn State Libraries E-Book. You may choose to use the E-Book as an alternative to purchasing a physical copy of the text. For questions or issues, you can contact the University Libraries Reserve Help (UL-RESERVESHELP@LISTS.PSU.EDU)

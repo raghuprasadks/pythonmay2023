@@ -1,0 +1,67 @@
+Introduction to python
+
+Building blocks
+
+syntax
+datatypes
+operators
+loops,conditional statements
+functions
+list,dictionary,tuple,set
+object oriented programming
+python
+database programming-mysql
+file management
+exception handling
+data analytics
+
+c -procedural programming
+
+
+student - roll number,sem,course,address,college
+property/attributes
+
+behaviour
+take up a course
+attend classes
+write tests
+get result
+
+
+class 
+object
+
+template
+
+1. Download and install python
+
+2. Idle - IDE - Integrated Development Environment
+
+python --version
+
+Path - 
+
+#include<stdio.h>
+
+void main()
+{
+printf("Welcome to C");
+}
+
+
+print('Welcome to python')
+
+
+mathematical operations
+
+Operators - 
+Arithmetic - +,-,*,/,//,%
+comparion operators - >,<,>=,<=,==
+logical operators - and,or,not
+bitwise operators - &,|,!
+
+
+int age=23;
+
+
+
