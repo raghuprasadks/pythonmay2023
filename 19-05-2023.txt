@@ -1,0 +1,16 @@
+Basic data types
+int,float,str,bool
+
+advanced data types - dictionary,list,tuple,set
+loops - while,for loop break continue
+
+key and value pair
+
+key should be unique
+value not necessary unique
+aadhar = {k1:v1,k2:v2,k3:v3}
+aadhar = {123:'raghu',234:'ravi',123:'prasad'}
+
+keys
+values
+dictitems

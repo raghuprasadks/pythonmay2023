@@ -43,4 +43,3 @@ print("data type of evennos",type(evennos))
 
 
 
-
