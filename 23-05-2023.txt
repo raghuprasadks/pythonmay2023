@@ -1,0 +1,4 @@
+ipldashboard
+
+1. display total runs scored by players
+2. display total wickets taken by players
