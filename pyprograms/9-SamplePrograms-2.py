@@ -78,3 +78,28 @@ for i in range(4):
 #print(ipldashboard[1])
 
 
+"""
+in  or not in
+"""
+
+marks = [20,24,11,39]
+
+marktosearch=40
+print(marktosearch in marks)
+
+"""
+Assignment ::
+Question #4: joint_lst(lsts) 10 pts
+Given a list of lists lsts, where each list contains numbers only, return a new list with all the 
+numbers that appear in all the lists in lsts. You can assume that lsts contains at least one list.
+Tip: You can check if an element is in a list with the in operator
+Preconditions and Postconditions
+lsts: list -> Integer smaller or greater than 1
+Returns: list -> non-empty sequence of integers
+Examples:
+>>> joint_lst([[75.5, 1, 2, 3], [1, 3, 5], [0, 5, 9, 3, 1, -96, 8, 1]])
+[1, 3]
+>>> joint_lst([[1, 2, 3], [4, 5], [7, 8, 9, 10], [6, 89]])
+[]
+
+"""
