@@ -103,3 +103,23 @@ Examples:
 []
 
 """
+
+lst = [[75.5, 1, 2, 3], [1, 3, 5], [0, 5, 9, 3, 1, -96, 8, 1]]
+#lst =[[1, 2, 3], [4, 5], [7, 8, 9, 10], [6, 89]]
+lst1 = lst[0]
+lstnew = []
+for searchelem in lst1:
+    print(searchelem)
+    isItemPresent=False
+    for itemindex in range(len(lst)):
+        item = lst[itemindex]
+        if (itemindex == 0):
+            continue;
+        if (searchelem in item):
+            isItemPresent = True
+        if (isItemPresent):
+            if (searchelem not in lstnew):
+                lstnew.append(searchelem)
+
+print("new list ",lstnew)
+
