@@ -1,0 +1,11 @@
+Assignment :
+
+
+
+>>> rectangle(14, 10) # Represents a 2x5 rectangle
+5 # 5 is the larger of the two sides
+>>> rectangle(25, 25) # Represents a 2.5x10 rectangle
+False # 2.5 is not an integer
+
+
+2l+2w=l*w
