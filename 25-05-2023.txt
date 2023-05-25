@@ -1,0 +1,49 @@
+Solving problem
+
+Write a function to 
+sumofdigits(num)
+return the sum of digits
+
+1. Sum of digits of a given number
+123
+1+2+3
+logic of separation
+Step 1 - modulus of given number
+sum = 0
+123%10 - 3
+r=num%10 - 3
+sum = sum +r
+step 2 - 123//10 = 12
+num = num//10
+while num >0
+
+
+
+2. Reverse a given number then if you get the
+original number
+
+121 = 121
+
+
+123 = 321
+reverse = 0
+num =123
+rem = 3
+revese = reverse*10 + rem
+reverse = 3
+
+num = 12
+rem = 2
+reverse = 3*10 +2
+reverse = 30 +2 = 32
+
+num = 1
+
+rem = 1
+reverse = 32*10 +1
+320+1 = 321
+
+
+
+2. Fibonacci series
+0 1 1 2 3 5 8
