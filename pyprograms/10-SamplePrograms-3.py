@@ -15,6 +15,8 @@ def sumofdigits(num):
 number=sumofdigits(123)
 print(number)
 """
+
+
 """
 2. Write a function to Reverse a given number
 reverse(num)
@@ -47,7 +49,8 @@ print("The decimal value of",octal, " is",to_decimal(octal))
 def to_decimal(oct_num):
     sum=0
     i=0
-    base=8
+    #base=8
+    base=2
     while (oct_num>0) :
        reminder=oct_num%10
        sum=sum+reminder*base**i
@@ -60,8 +63,10 @@ print("Decimal number is :",number)
 
 
 #list_of_numbers=[]
-dict_of_numbers={}
+import math
 def has_hoagie(num):
+    dict_of_numbers = {}
+    num =abs(num)
     temp_key=0
     while(num>0):
         rem=num%10
@@ -85,6 +90,8 @@ def has_hoagie(num):
             if dict_of_numbers[prev_element] == dict_of_numbers[next_element] :
                 print("It has hoagie")
             prev_element=prev_element+1
-has_hoagie(1235)
+#has_hoagie(1235)
 
-has_hoagie(737)
+#has_hoagie(737)
+
+has_hoagie(-6060)

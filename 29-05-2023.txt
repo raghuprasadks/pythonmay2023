@@ -1,0 +1,25 @@
+Number generation pattern
+
+*
+**
+***
+****
+*****
+
+while loop
+
+*****
+****
+***
+**
+*
+
+https://www.tutorialstonight.com/python/number-pattern-programs-in-python
+
+1
+12
+123
+1234
+12345
+
+forward and reverse
