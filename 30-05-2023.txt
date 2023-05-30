@@ -1,0 +1,58 @@
+Object Oriented Programming
+
+Scripting
+
+Class and Object
+
+class - template or a blue print
+
+plan - civil  drawing - 2d,3d
+
+2 BHK - 100
+3 BHK - 50
+
+A1
+A2
+A3 - Object
+
+class 
+member variables
+methods
+
+account
+property
+
+name
+address
+idproof
+actnum
+bank
+branch
+balance
+
+method
+openAccount
+closeAccount
+Deposit
+Withdraw
+tranfer
+
+act1 - raghu - object
+act2 - ravi - object
+
+
+class
+headoffice
+branchoffice
+zonaloffice
+employees
+customer
+services
+
+Modularity,reusability
+
+Inheritance,polymorphism,abstration,encapsulation
+
+
+
+
