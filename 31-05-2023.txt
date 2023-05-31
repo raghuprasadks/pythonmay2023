@@ -1,0 +1,19 @@
+Object Oriented programming
+
+constructor
+
+setter and getter
+
+list with objects
+
+
+Product
+
+code
+name
+desc
+supplier
+price
+
+
+

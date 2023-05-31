@@ -54,3 +54,5 @@ print("data type of thisdict ",type(thisdict))
 print("alternative way of creating a dictionary")
 thisdict = dict(name = "John", age = 36, country = "Norway")
 print(thisdict)
+
+studdict={"name":["raghu","ravi"],"rollnum":[100,101]}

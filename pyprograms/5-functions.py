@@ -27,3 +27,23 @@ def isOddOrEven(num):
 
 isOddOrEven(8)
 isOddOrEven(9)
+
+"""
+Write a function to print a given number is prime or not
+
+def isPrime (num):
+    
+"""
+
+def isPrime(num):
+    isPrime=True
+    for i in range (2,num//2):
+        if (num%i==0):
+            isPrime=False
+            break
+    if (isPrime):
+        print (num, " is prime")
+    else:
+        print(num, " is not prime")
+
+isPrime(10)
