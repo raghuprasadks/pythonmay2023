@@ -60,7 +60,8 @@ class Product():
     Constructor
     """
     def __init__(self,_code,_name,_desc,_supplier,_price):
-        self.code = _code
+        #self.code = _code
+        self.setCode(_code)
         self.name = _name
         self.desc = _desc
         self.supplier =_supplier
