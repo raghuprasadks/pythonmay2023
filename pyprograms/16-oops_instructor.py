@@ -19,10 +19,12 @@ class Instructor():
         self.courses.remove(_course)
 
     def addCourse(self,course):
-        self.courses.append(course)
+        if course not in self.courses:
+            self.courses.append(course)
 
 instructor1 = Instructor("raghu")
 print(instructor1.getName())
+instructor1.addCourse("Python")
 instructor1.addCourse("Python")
 instructor1.addCourse("ML")
 instructor1.addCourse("Web Development")
