@@ -1,5 +1,8 @@
 class Pantry():
-    items: dict={}
+    #items: dict={}
+
+    def __init__(self):
+        self.items ={}
 
     def __repr__(self):
         return f"I am a Pantry object, my current stock is {self.items}"
@@ -46,3 +49,5 @@ sara_pantry.get_item('Lettuce', .5)
 
 sara_pantry.get_item('dal', .5)
 
+ben_pantry = Pantry()
+print("Ben pantry ",ben_pantry)
