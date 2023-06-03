@@ -124,7 +124,16 @@ class VendingMachine:
 
     def _restock(self, item, stock):
         # --- YOUR CODE STARTS HERE
-        pass
+        if(item in self.vending.keys()):
+            lst=self.vending[item]
+            print('lst ',lst)
+            currentstock =lst[1]
+            totalstock = currentstock+stock
+            lst[1]=totalstock
+            print("current item stock is ",totalstock)
+        else:
+            print("invalid item")
+
 
     # --- YOUR CODE STARTS HERE
     def isStocked(self):
@@ -145,3 +154,6 @@ Testing
 john_vendor = Vendor('John Doe')
 west_machine = john_vendor.install()
 print(west_machine.getStock())
+john_vendor.restock(west_machine, 215, 9)
+john_vendor.restock(west_machine,156, 1)
+
