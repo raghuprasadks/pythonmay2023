@@ -28,9 +28,11 @@ class Employee():
 emp1 = Employee(1,"raghu")
 print(emp1)
 emp1.info()
+'''
 emp2 = Employee()
 print(emp2)
 emp2.info()
+'''
 print ("null or None error")
 emp1=None #null
 print(emp1.info())
