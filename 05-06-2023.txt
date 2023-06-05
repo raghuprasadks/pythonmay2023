@@ -1,0 +1,19 @@
+Exception  Handling
+
+Absubt termination of the execution of the program is error
+
+1. Compilation error
+
+gramatical error
+
+2. Compilation error still program may fail to execute during run time
+
+Runtime errors - exceptions
+
+a. Scenario's
+
+divide a number by zero - ZeroDivisionError
+
+array index out of bound - list index out of bound
+
+null pointer
