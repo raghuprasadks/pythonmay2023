@@ -1,0 +1,59 @@
+Exception Management
+
+
+Object Oriented Programming
+
+Class
+Object
+Constructure
+
+List and Dictionary
+
+Inheritance
+
+Parent class
+Child Class
+
+Base class
+Derived class
+
+Reusability
+
+Common properties
+Common functionality
+
+we can define in parent class
+child class can use those properties
+or functionlity
+
+Polymorphism
+method overloading 
+method overriding
+
+
+Vehicle
+properties
+
+manufacturer
+model
+regno
+owner
+color
+price
+
+
+functionality
+
+start()
+move()
+stop()
+info()
+
+
+
+Bike
+Car
+
+
+
+

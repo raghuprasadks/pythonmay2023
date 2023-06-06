@@ -36,5 +36,6 @@ except TypeError as ex:
 except Exception as ex:
     print("Any other error")
     print(ex)
-
+finally:
+    print("finally :is executed every time")
 print("result of division ",result)
