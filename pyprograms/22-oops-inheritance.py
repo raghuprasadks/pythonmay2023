@@ -61,13 +61,18 @@ class Bike(Vehicle):
         self.speed = self.speed+20
         print("Bike: moved :speed ",self.speed)
 
+    def stop(self):
+        print("calling stop of base")
+        Vehicle.stop(self)
+
+
 
 mybike = Bike("Yamaha","Super 100","KA05 MN6666","Ravi","Black",250000)
 mybike.start()
 mybike.move()
 mybike.move()
 mybike.stop()
-
+#print("base : " ,mybike.Vehicle.move())
 
 info =mybike.info()
 print("Info about my bike ",info)
