@@ -28,14 +28,7 @@ class Course:
         self.cname = cname
         self.credits = credits
 
-    '''
-    def __str__(self):
-        # YOUR CODE STARTS HERE
-        #pass cid(credits): cname
-        strformat=f"{self.cid({self.credits}): {self.cname}}"
-        print(strformat)
-        return f"{self.cid}({self.credits}): {self.cname}"
-    '''
+
     def __str__(self):
         # YOUR CODE STARTS HERE
         msg = f'{self.cid}({self.credits}): {self.cname}'
@@ -74,19 +67,53 @@ class Catalog:
 
     def __init__(self):
         # YOUR CODE STARTS HERE
-        pass
+        #pass
+        self.courseOfferings={}
+        #courseOfferings
 
     def addCourse(self, cid, cname, credits):
         # YOUR CODE STARTS HERE
-        pass
+        #pass
+        course=Course(cid,cname,credits)
+        if cid not in self.courseOfferings.keys():
+            self.courseOfferings[cid]=course
+            return "Course added successfully"
+        else:
+            return "Course already added"
 
     def removeCourse(self, cid):
         # YOUR CODE STARTS HERE
-        pass
+        #pass
+        if cid in self.courseOfferings.keys():
+            self.courseOfferings.pop(cid)
+            return "Course removed successfully"
+        else:
+            return "Course not found"
+
 
     def _loadCatalog(self, file):
         with open(file, "r") as f:
             course_info = f.read()
+        #print("data type of course_info")
+        #print(type(course_info))
+        couselist = course_info.split('\n')
+        #print(type(couselist))
+        print("course list")
+        print(couselist)
+        for course in couselist:
+            courseaftersplit = course.split(',')
+            cid = courseaftersplit[0]
+            cname = courseaftersplit[1]
+            credits = courseaftersplit[2]
+
+            course = Course(cid, cname, credits)
+            self.courseOfferings[cid] = course
+            #print("course after split 0 ",courseaftersplit[0])
+            #print("course after split 1 ", courseaftersplit[1])
+            #print("course after split 2 ", courseaftersplit[2])
+            #self.addCourse(courseaftersplit[0],courseaftersplit[1],courseaftersplit[2])
+            #print("course offerings")
+        print(self.courseOfferings)
         # YOUR CODE STARTS HERE
 
 
@@ -94,10 +121,12 @@ def run_tests():
     import doctest
 
     # Run tests in all docstrings
-    doctest.testmod(verbose=True)
+    #doctest.testmod(verbose=True)
     
     # Run tests per function - Uncomment the next line to run doctest by function. Replace Course with the name of the function you want to test
-    doctest.run_docstring_examples(Course, globals(), name='HW2',verbose=True)
+    #doctest.run_docstring_examples(Course, globals(), name='HW2',verbose=True)
+    doctest.run_docstring_examples(Catalog, globals(), name='HW2', verbose=True)
+
 
 if __name__ == "__main__":
     run_tests()
