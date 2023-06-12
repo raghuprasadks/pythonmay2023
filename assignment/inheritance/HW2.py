@@ -24,33 +24,24 @@ class Course:
         CMPSC132(3): Programming in Python II
     '''
     def __init__(self, cid, cname, credits):
-        self.cid = cid
-        self.cname = cname
-        self.credits = credits
+        # YOUR CODE STARTS HERE
+        pass
 
 
     def __str__(self):
         # YOUR CODE STARTS HERE
-        msg = f'{self.cid}({self.credits}): {self.cname}'
-        #print(msg)
-        return msg
+        pass
 
     __repr__ = __str__
 
     def __eq__(self, other):
         # YOUR CODE STARTS HERE
-        #pass
-        if isinstance(other,Course):
-            if self.cid==other.cid:
-                return True
-            else:
-                return False
-        else:
-            return False
+        pass
+
 
 
 class Catalog:
-    '''
+    ''' 
         >>> C = Catalog()
         >>> C.courseOfferings
         {}
@@ -67,46 +58,23 @@ class Catalog:
 
     def __init__(self):
         # YOUR CODE STARTS HERE
-        #pass
-        self.courseOfferings={}
-        #courseOfferings
+        pass
 
     def addCourse(self, cid, cname, credits):
         # YOUR CODE STARTS HERE
-        #pass
-        course=Course(cid,cname,credits)
-        if cid not in self.courseOfferings.keys():
-            self.courseOfferings[cid]=course
-            return "Course added successfully"
-        else:
-            return "Course already added"
+        pass
 
     def removeCourse(self, cid):
         # YOUR CODE STARTS HERE
-        #pass
-        if cid in self.courseOfferings.keys():
-            self.courseOfferings.pop(cid)
-            return "Course removed successfully"
-        else:
-            return "Course not found"
-
+        pass
 
     def _loadCatalog(self, file):
         with open(file, "r") as f:
             course_info = f.read()
-        #print("data type of course_info")
-        #print(type(course_info))
-        couselist = course_info.split('\n')
-        #print(type(couselist))
-        #print("course list")
-        #print(couselist)
-        for course in couselist:
-            courseaftersplit = course.split(',')
-            cid = courseaftersplit[0]
-            cname = courseaftersplit[1]
-            credits = courseaftersplit[2]
-            course = Course(cid, cname, credits)
-            self.courseOfferings[cid] = course
+        # YOUR CODE STARTS HERE
+        
+
+
 class Semester:
     '''
         >>> cmpsc131 = Course('CMPSC 131', 'Programming in Python I', 3)
@@ -148,70 +116,35 @@ class Semester:
 
     def __init__(self):
         # --- YOUR CODE STARTS HERE
-        #pass
-        self.courses={}
+        pass
+
+
+
     def __str__(self):
         # YOUR CODE STARTS HERE
-        #pass
-        keys=""
-        counter=0
-        courseslength = len(self.courses)
-        if(courseslength<=0):
-            keys = "No courses"
-        else:
-            for key in self.courses.keys():
-                counter = counter + 1
-                keys=keys+ ((key+'; ') if (len(self.courses)>counter) else key)
-        return keys
-
-
+        pass
 
     __repr__ = __str__
 
     def addCourse(self, course):
         # YOUR CODE STARTS HERE
-        #pass
-        msg=None
-        if course.cid not in self.courses.keys():
-            self.courses[course.cid] = course
-        else:
-            msg="Course already added"
-            return msg
-        #print(self.courses)
-
+        pass
 
     def dropCourse(self, course):
         # YOUR CODE STARTS HERE
-        #pass
-        msg=None
-        if course.cid in self.courses.keys():
-            self.courses.pop(course.cid)
-        else:
-            msg = "No such course"
-        return msg
-
+        pass
 
     @property
     def totalCredits(self):
         # YOUR CODE STARTS HERE
-        #pass
-        tc =0
-        for k,v in self.courses.items():
-            #print(type(v))
-            tc = tc+v.credits
-        return  tc
+        pass
 
     @property
     def isFullTime(self):
         # YOUR CODE STARTS HERE
-        #pass
-        isFT=False
-        totalcredits=self.totalCredits
-        if(totalcredits>=12):
-            isFT=True
-        return isFT
+        pass
 
-
+    
 class Loan:
     '''
         >>> import random
@@ -230,27 +163,26 @@ class Loan:
         >>> third_loan.loan_id
         21124
     '''
+    
 
     def __init__(self, amount):
         # YOUR CODE STARTS HERE
-        #pass
-        self.loan_id=self.__getloanID
-        self.amount=amount
+        pass
+
 
     def __str__(self):
         # YOUR CODE STARTS HERE
-        #pass
-        return f"Balance: ${self.amount}"
+        pass
 
     __repr__ = __str__
+
 
     @property
     def __getloanID(self):
         # YOUR CODE STARTS HERE
-        #pass
-        import random
-        #random.seed(2)
-        return random.randrange(10000,99999)
+        pass
+
+
 class Person:
     '''
         >>> p1 = Person('Jason Lee', '204-99-2890')
@@ -270,31 +202,22 @@ class Person:
 
     def __init__(self, name, ssn):
         # YOUR CODE STARTS HERE
-        #pass
-        self.name = name
-        self.ssn = ssn
+        pass
 
     def __str__(self):
         # YOUR CODE STARTS HERE
-        #pass
-        ssnlen = len(self.ssn)
-        ssnformatted =f"***-**-{self.ssn[ssnlen-4:ssnlen]}"
-        return f"Person({self.name}, {ssnformatted})"
+        pass
+
     __repr__ = __str__
 
     def get_ssn(self):
         # YOUR CODE STARTS HERE
-        #pass
-        return self.ssn
+        pass
 
     def __eq__(self, other):
         # YOUR CODE STARTS HERE
-        #pass
-        isSSNEqual = False
-        if (other != None):
-            if(self.ssn==other.ssn):
-                isSSNEqual = True
-        return isSSNEqual
+        pass
+
 class Staff(Person):
     '''
         >>> C = Catalog()
@@ -332,19 +255,12 @@ class Staff(Person):
     '''
     def __init__(self, name, ssn, supervisor=None):
         # YOUR CODE STARTS HERE
-        #pass
-        super().__init__(name,ssn)
-        self._supervisor =None
-        if(supervisor != None):
-            self._supervisor = supervisor
-            self.setSupervisor(self._supervisor)
+        pass
 
 
     def __str__(self):
         # YOUR CODE STARTS HERE
-        #pass
-        return  f"Staff({self.name}, {self.id})"
-
+        pass
 
     __repr__ = __str__
 
@@ -352,72 +268,36 @@ class Staff(Person):
     @property
     def id(self):
         # YOUR CODE STARTS HERE
-        #pass
-        initials=self.name.split(' ')
-        formattedinitial=''
-        ssnlen = len(self.ssn)
-        ssnformatted = f"{self.ssn[ssnlen - 4:ssnlen]}"
-        formattedid=''
-        for i in initials:
-            formattedinitial=formattedinitial+i[0]
-        formattedid=formattedid+f"905{formattedinitial.lower()}{ssnformatted}"
-        return formattedid
+        pass
 
-
-    @property
+    @property   
     def getSupervisor(self):
         # YOUR CODE STARTS HERE
-        #pass
-        return self._supervisor
+        pass
 
     def setSupervisor(self, new_supervisor):
         # YOUR CODE STARTS HERE
-        if isinstance(new_supervisor, Staff):
-        #if (new_supervisor is isinstance(Staff)):
-            self._supervisor = new_supervisor
-            return "Completed!"
-        else:
-            return None
-        #pass
+        pass
 
 
     def applyHold(self, student):
         # YOUR CODE STARTS HERE
-        #pass
-        if (isinstance(student,Student)):
-        #if (student is isinstance(Student)):
-            student.hold = True
-            return "Completed!"
-        else:
-            return None
+        pass
 
     def removeHold(self, student):
         # YOUR CODE STARTS HERE
-        #pass
-        if(isinstance(student,Student)):
-        #if (student is isinstance(Student)):
-            student.hold = False
-            return "Completed!"
-        else:
-            return None
-
+        pass
 
     def unenrollStudent(self, student):
         # YOUR CODE STARTS HERE
-        #pass
-        if(isinstance(student,Student)):
-        #if (student is isinstance(Student)):
-            student.active = False
-            return "Completed!"
-        else:
-            return None
-
+        pass
 
     def createStudent(self, person):
         # YOUR CODE STARTS HERE
-        #pass
-        self.student = Student(person.name,person.ssn,"Freshman")
-        return self.student
+        pass
+
+
+
 
 class Student(Person):
     '''
@@ -471,110 +351,46 @@ class Student(Person):
         >>> s1.classCode
         'Sophomore'
     '''
-    def __init__(self, name, ssn, type):
+    def __init__(self, name, ssn, year):
         random.seed(1)
         # YOUR CODE STARTS HERE
-        super().__init__(name,ssn)
-        self.year = type
-        self.classCode=type
-        self.semesters={}
-        self.hold=False
-        self.active=True
-        self.account:StudentAccount
 
 
     def __str__(self):
         # YOUR CODE STARTS HERE
-        #pass
-        return f"Student({self.name},{self.id},{self.year})"
+        pass
 
     __repr__ = __str__
 
     def __createStudentAccount(self):
         # YOUR CODE STARTS HERE
-        #pass
-        studentAccount = StudentAccount()
-        if(self.active):
-            self.account=studentAccount
-        return studentAccount
+        pass
 
 
     @property
     def id(self):
         # YOUR CODE STARTS HERE
-        #pass
-        initials = self.name.split(' ')
-        formattedinitial = ''
-        ssnlen = len(self.ssn)
-        ssnformatted = f"{self.ssn[ssnlen - 4:ssnlen]}"
-        formattedid = ''
-        for i in initials:
-            formattedinitial = formattedinitial + i[0]
-        formattedid = formattedid + f"{formattedinitial.lower()}{ssnformatted}"
-        return formattedid
+        pass
 
     def registerSemester(self):
         # YOUR CODE STARTS HERE
-        #pass
-        if(self.active==False or self.hold==True):
-            return "Unsuccessful operation"
-        else:
-            if (len(self.semesters.keys())<1):
-                sem = Semester()
-                self.semesters[1]=sem
-                #print("semeters")
-                #print(self.semesters)
-            else:
-                sem = Semester()
-                self.semesters[len(self.semesters.keys())+1]=sem
-                #print("semester :else")
-                #print(self.semesters)
+        pass
+
+
+
     def enrollCourse(self, cid, catalog):
         # YOUR CODE STARTS HERE
-        #pass
-        if (self.active == False or self.hold == True):
-            return "Unsuccessful operation"
+        pass
 
-        if(cid in catalog.courseOfferings.keys()):
-            if (cid in self.semesters.keys()):
-                return "Course already enrolled"
-            else:
-                maxid = max(self.semesters.keys())
-                #print("max key ::")
-                #print(max(self.semesters.keys()))
-                #course = self.semesters[maxid]
-                #if(course=="No courses"):
-                if cid in catalog.courseOfferings.keys():
-                    course = catalog.courseOfferings[cid]
-                    course.courses=cid
-                    self.semesters[maxid]=course
-                #print("semester:add")
-                #print(self.semesters)
-                return "Course added successfully"
-        else:
-            return "Course not found"
     def dropCourse(self, cid):
         # YOUR CODE STARTS HERE
-        #pass
-        if (cid not in self.semesters.keys()):
-            return "No such course"
-        else:
-            self.semesters.pop(cid)
-
+        pass
 
     def getLoan(self, amount):
         # YOUR CODE STARTS HERE
-        #pass
-        """
-        if not self.active:
-            return "Unsuccessful operation"
-        current_semester = max(self.semesters.keys())
-        if current_semester not in self.semesters or not self.semesters[current_semester].isFullTime():
-            return "Unsuccessful operation"
-        loan = Loan(amount)
-        self.account.loans[loan.id] = loan
-        self.account.makePayment(amount)
-        """
+        pass
+
+
 
 
 class StudentAccount:
@@ -633,34 +449,29 @@ class StudentAccount:
         >>> s1.account.balance
         7900.0
     '''
-
+    
     def __init__(self, student):
         # YOUR CODE STARTS HERE
-        #pass
-        self.CREDIT_PRICE:float=1000
-        self.student:Student
-        self.balance:float
-        self.loans:dict
+        pass
 
 
     def __str__(self):
         # YOUR CODE STARTS HERE
-        #pass
-        return f"Name:{self.student.name}\nID:{self.student.id}\nBalance:{self.balance}"
+        pass
 
     __repr__ = __str__
 
+
     def makePayment(self, amount):
         # YOUR CODE STARTS HERE
-        #pass
-        self.balance = self.balance - amount
-        return self.balance
+        pass
+
 
     def chargeAccount(self, amount):
         # YOUR CODE STARTS HERE
-        #pass
-        self.balance = self.balance + amount
-        return self.balance
+        pass
+
+
 
 
 def run_tests():
@@ -670,43 +481,7 @@ def run_tests():
     doctest.testmod(verbose=True)
     
     # Run tests per function - Uncomment the next line to run doctest by function. Replace Course with the name of the function you want to test
-    #doctest.run_docstring_examples(Course, globals(), name='HW2',verbose=True)
-    #doctest.run_docstring_examples(Catalog, globals(), name='HW2', verbose=True)
-    #doctest.run_docstring_examples(Loan, globals(), name='HW2', verbose=True)
-    #doctest.run_docstring_examples(Staff, globals(), name='HW2', verbose=True)
-    """
-    C = Catalog()
-    C._loadCatalog("cmpsc_catalog_small.csv")
-    s1 = Staff('Jane Doe', '214-49-2890')
-    print("supervisor 1 ",s1.getSupervisor)
-    s2 = Staff('John Doe', '614-49-6590', s1)
-    print("supervisor 2",s2.getSupervisor)
-    #Staff('Jane Doe', 905jd2890)
-    print("equals ",s1 == s2)
-    #False
-    print("id ",s2.id)
-    #'905jd6590'
-    p=Person('Jason Smith', '221-11-2629')
-    st1 = s1.createStudent(p)
-    print("isinstance ",isinstance(st1, Student))
-    #True
-    print("hold : ",s2.applyHold(st1))
-    #'Completed!'
-    st1.registerSemester()
-    #'Unsuccessful operation'
-    s2.removeHold(st1)
-    #'Completed!'
-    st1.registerSemester()
-    st1.enrollCourse('CMPSC 132', C)
-    #'Course added successfully'
-    print("semesters" ,st1.semesters)
-    #{1: CMPSC 132}
-    s1.applyHold(st1)
-    #'Completed!'
-    st1.enrollCourse('CMPSC 360', C)
-    #'Unsuccessful operation'
-    print("semesters : ",st1.semesters)
-    #{1: CMPSC 132}
-    """
+    #doctest.run_docstring_examples(Course, globals(), name='HW2',verbose=True)   
+
 if __name__ == "__main__":
     run_tests()

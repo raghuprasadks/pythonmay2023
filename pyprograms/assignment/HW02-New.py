@@ -155,13 +155,11 @@ class Semester:
         #pass
         keys=""
         counter=0
-        courseslength = len(self.courses)
-        if(courseslength<=0):
+        if(len(self.courses)<=0):
             keys = "No courses"
-        else:
-            for key in self.courses.keys():
-                counter = counter + 1
-                keys=keys+ ((key+'; ') if (len(self.courses)>counter) else key)
+        for key in self.courses.keys():
+            counter = counter + 1
+            keys=keys+ ((key+'; ') if (len(self.courses)>counter) else key)
         return keys
 
 
@@ -332,7 +330,6 @@ class Staff(Person):
     '''
     def __init__(self, name, ssn, supervisor=None):
         # YOUR CODE STARTS HERE
-        #pass
         super().__init__(name,ssn)
         self._supervisor =None
         if(supervisor != None):
@@ -342,7 +339,6 @@ class Staff(Person):
 
     def __str__(self):
         # YOUR CODE STARTS HERE
-        #pass
         return  f"Staff({self.name}, {self.id})"
 
 
@@ -475,7 +471,7 @@ class Student(Person):
         random.seed(1)
         # YOUR CODE STARTS HERE
         super().__init__(name,ssn)
-        self.year = type
+        #self.year = year
         self.classCode=type
         self.semesters={}
         self.hold=False
@@ -485,7 +481,6 @@ class Student(Person):
 
     def __str__(self):
         # YOUR CODE STARTS HERE
-        #pass
         return f"Student({self.name},{self.id},{self.year})"
 
     __repr__ = __str__
@@ -496,7 +491,7 @@ class Student(Person):
         studentAccount = StudentAccount()
         if(self.active):
             self.account=studentAccount
-        return studentAccount
+            return studentAccount
 
 
     @property
@@ -515,57 +510,40 @@ class Student(Person):
 
     def registerSemester(self):
         # YOUR CODE STARTS HERE
-        #pass
-        if(self.active==False or self.hold==True):
+        if not self.active or self.hold:
             return "Unsuccessful operation"
+        semester_num = len(self.semesters) + 1
+        self.semesters[semester_num] = Semester()
+        if semester_num <= 2:
+            self.year = "Freshman"
+        elif semester_num <= 4:
+            self.year = "Sophomore"
+        elif semester_num <= 6:
+            self.year = "Junior"
         else:
-            if (len(self.semesters.keys())<1):
-                sem = Semester()
-                self.semesters[1]=sem
-                #print("semeters")
-                #print(self.semesters)
-            else:
-                sem = Semester()
-                self.semesters[len(self.semesters.keys())+1]=sem
-                #print("semester :else")
-                #print(self.semesters)
+            self.year = "Senior"
+
+
     def enrollCourse(self, cid, catalog):
         # YOUR CODE STARTS HERE
-        #pass
-        if (self.active == False or self.hold == True):
+        if not self.active or self.hold:
             return "Unsuccessful operation"
-
-        if(cid in catalog.courseOfferings.keys()):
-            if (cid in self.semesters.keys()):
-                return "Course already enrolled"
-            else:
-                maxid = max(self.semesters.keys())
-                #print("max key ::")
-                #print(max(self.semesters.keys()))
-                #course = self.semesters[maxid]
-                #if(course=="No courses"):
-                if cid in catalog.courseOfferings.keys():
-                    course = catalog.courseOfferings[cid]
-                    course.courses=cid
-                    self.semesters[maxid]=course
-                #print("semester:add")
-                #print(self.semesters)
+        for semester in self.semesters.values():
+            if semester.enrollCourse(cid, catalog, self.account):
                 return "Course added successfully"
-        else:
-            return "Course not found"
+        return "Course not found"
+
     def dropCourse(self, cid):
         # YOUR CODE STARTS HERE
-        #pass
-        if (cid not in self.semesters.keys()):
-            return "No such course"
-        else:
-            self.semesters.pop(cid)
-
+        if not self.active or self.hold:
+            return "Unsuccessful operation"
+        for semester in self.semesters.values():
+            if semester.dropCourse(cid, self.account):
+                return "Course dropped successfully"
+        return "Course not found"
 
     def getLoan(self, amount):
         # YOUR CODE STARTS HERE
-        #pass
-        """
         if not self.active:
             return "Unsuccessful operation"
         current_semester = max(self.semesters.keys())
@@ -574,10 +552,11 @@ class Student(Person):
         loan = Loan(amount)
         self.account.loans[loan.id] = loan
         self.account.makePayment(amount)
-        """
 
 
 class StudentAccount:
+    
+    
     '''
         >>> C = Catalog()
         >>> C._loadCatalog("cmpsc_catalog_small.csv")
@@ -633,34 +612,27 @@ class StudentAccount:
         >>> s1.account.balance
         7900.0
     '''
-
+    CREDIT_PRICE = 1000
     def __init__(self, student):
         # YOUR CODE STARTS HERE
-        #pass
-        self.CREDIT_PRICE:float=1000
-        self.student:Student
-        self.balance:float
-        self.loans:dict
-
+        self.balance = 0
+        self.student = student
+        self.loans = {}
 
     def __str__(self):
         # YOUR CODE STARTS HERE
-        #pass
-        return f"Name:{self.student.name}\nID:{self.student.id}\nBalance:{self.balance}"
+        return f"Name: {self.student.name}\nID: {self.student.id}\nBalance: ${self.balance}"
+    
 
     __repr__ = __str__
 
     def makePayment(self, amount):
         # YOUR CODE STARTS HERE
-        #pass
         self.balance = self.balance - amount
-        return self.balance
 
     def chargeAccount(self, amount):
         # YOUR CODE STARTS HERE
-        #pass
         self.balance = self.balance + amount
-        return self.balance
 
 
 def run_tests():
@@ -674,39 +646,7 @@ def run_tests():
     #doctest.run_docstring_examples(Catalog, globals(), name='HW2', verbose=True)
     #doctest.run_docstring_examples(Loan, globals(), name='HW2', verbose=True)
     #doctest.run_docstring_examples(Staff, globals(), name='HW2', verbose=True)
-    """
-    C = Catalog()
-    C._loadCatalog("cmpsc_catalog_small.csv")
-    s1 = Staff('Jane Doe', '214-49-2890')
-    print("supervisor 1 ",s1.getSupervisor)
-    s2 = Staff('John Doe', '614-49-6590', s1)
-    print("supervisor 2",s2.getSupervisor)
-    #Staff('Jane Doe', 905jd2890)
-    print("equals ",s1 == s2)
-    #False
-    print("id ",s2.id)
-    #'905jd6590'
-    p=Person('Jason Smith', '221-11-2629')
-    st1 = s1.createStudent(p)
-    print("isinstance ",isinstance(st1, Student))
-    #True
-    print("hold : ",s2.applyHold(st1))
-    #'Completed!'
-    st1.registerSemester()
-    #'Unsuccessful operation'
-    s2.removeHold(st1)
-    #'Completed!'
-    st1.registerSemester()
-    st1.enrollCourse('CMPSC 132', C)
-    #'Course added successfully'
-    print("semesters" ,st1.semesters)
-    #{1: CMPSC 132}
-    s1.applyHold(st1)
-    #'Completed!'
-    st1.enrollCourse('CMPSC 360', C)
-    #'Unsuccessful operation'
-    print("semesters : ",st1.semesters)
-    #{1: CMPSC 132}
-    """
+
+
 if __name__ == "__main__":
     run_tests()

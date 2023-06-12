@@ -1,0 +1,23 @@
+1. Class, Object,dictionary,list
+
+ecommerce
+
+product - class
+properties/attributes
+code,name,desc,supplier,price
+
+constructor
+def __init__()
+
+method
+def info()
+return product details
+
+productcatalog - list of products
+add()
+list()
+
+product list
+customer
+order
+
