@@ -14,8 +14,15 @@ def info()
 return product details
 
 productcatalog - list of products
-add()
+productlist=[]
+add(product)
+
 list()
+loop through and print product information
+
+delete(product)
+
+update(product)
 
 product list
 customer

@@ -547,7 +547,7 @@ class Student(Person):
                 if cid in catalog.courseOfferings.keys():
                     course = catalog.courseOfferings[cid]
                     course.courses=cid
-                    self.semesters[maxid]=course
+                    self.semesters[maxid]=cid
                 #print("semester:add")
                 #print(self.semesters)
                 return "Course added successfully"
