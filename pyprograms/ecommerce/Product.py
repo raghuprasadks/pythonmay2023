@@ -46,7 +46,7 @@ prod2.name="Nokia G20 Smartphone"
 prod2.desc='Dual SIM 4G, 4GB RAM/64GB Storage, 48MP Quad Camera with 6.5” (16.51 cm) Screen | Silver, 4GB+64Gb'
 prod2.supplier="Nokia"
 prod2.price=9999
-"""
+
 prod1 = Product(1,"Nokia G20 Smartphone",'Dual SIM 4G, 4GB RAM/64GB Storage, 48MP Quad Camera with 6.5” (16.51 cm) Screen | Silver, 4GB+64Gb',"Nokia",9999,10)
 print("prod1:str")
 print(str(prod1))
@@ -63,3 +63,4 @@ prod2 = Product(2,"Nokia G20 Smartphone new",'Dual SIM 4G, 4GB RAM/64GB Storage,
 info = prod2.information()
 print("product 2")
 print(info)
+"""
