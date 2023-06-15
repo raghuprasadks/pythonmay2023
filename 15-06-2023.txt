@@ -1,0 +1,10 @@
+1. Product.py - module
+
+2. ProductCatalog.py
+
+deleteProduct(product)
+
+searchByProductName(pname)
+searchBySupplier(sname)
+
+3. Shopping.py

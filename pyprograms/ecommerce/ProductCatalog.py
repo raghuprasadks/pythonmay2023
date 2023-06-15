@@ -19,4 +19,14 @@ class ProductCatalog():
             if(p.code==product.code):
                 p=product
 
+    def searchByProductName(self,pname):
+        print("searchByProductName")
+        found=False
+        for p in self.productlist:
+            #if(p.name==pname):
+            if (pname.lower() in p.name.lower()):
+                found=True
+                print(p)
+        if(not found):
+            print(pname," not found")
 

@@ -12,6 +12,11 @@ pcatalog.updateProduct(prod1)
 print("after updation")
 pcatalog.listProduct()
 
+prod2 = Product.Product(2,"Nokia G10 Smartphone",'Dual SIM 4G, 4GB RAM/64GB Storage, 48MP Quad Camera with 6.5” (16.51 cm) Screen | Silver, 4GB+64Gb',"Nokia",19999,10)
+pcatalog.addProduct(prod2)
+pcatalog.listProduct()
+pcatalog.searchByProductName("nokia G10 ")
+
 
 
 
