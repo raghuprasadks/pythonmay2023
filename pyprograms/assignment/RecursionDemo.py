@@ -38,20 +38,22 @@ fibonacci series 0 1 1 2 3
 https://www.geeksforgeeks.org/count-the-occurence-of-digit-k-in-a-given-number-n-using-recursion/
 """
 def consecutive_digits (num):
+    isConsecutive=False
     numdict={}
+    prev_digit=-1
     while(num>0):
-        digit=num%10
-        if digit in numdict.keys():
-            currentcount = numdict[digit]
-            numdict[digit]=currentcount+1
-        else:
-            count = 1
-            numdict[digit] = count
-
+        current_digit=num%10
+        if(prev_digit==current_digit):
+            #print("consecutive digit ",current_digit)
+            isConsecutive=True
+            return isConsecutive
+            #break
         num = num//10
-    print(numdict)
+        prev_digit=current_digit
+    return isConsecutive
 
-consecutive_digits(2222466666678)
+print(consecutive_digits(2222466666678))
+print(consecutive_digits(123456))
 
 
 def only_evens(num):
@@ -85,3 +87,19 @@ def only_evens_recursion(num):
             return leastsignificant*10+only_evens_recursion(num=num//10)
 
 
+
+def consecutive_digits_recursion (num):
+    if(num==0):
+        return
+    current_digit=num%10
+    remaining_digit = num//10
+    return consecutive_digits_recursion(remaining_digit)
+    #min = a if a < b else b
+    isConsecutive = True if (previous_digit:int== current_digit) else False
+    return isConsecutive
+    previous_digit=current_digit
+
+
+
+print(consecutive_digits_recursion(2222466666678))
+print(consecutive_digits_recursion(123456))

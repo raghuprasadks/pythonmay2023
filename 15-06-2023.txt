@@ -8,3 +8,26 @@ searchByProductName(pname)
 searchBySupplier(sname)
 
 3. Shopping.py
+
+4. Create Customer class
+
+id,name,email,mobile,address,location
+
+create constructure
+
+implement __str__ method
+
+
+5. Cart class
+
+constructure
+
+Cart(customer)
+
+addCart(product)
+deleteCart(product)
+listCart()
+
+checkout()
+
+
