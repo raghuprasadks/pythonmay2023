@@ -1,0 +1,12 @@
+https://www.geeksforgeeks.org/working-csv-files-python/
+
+File Management
+
+1. Creating a file
+2. Reading data from a file
+3. Move to a specific location in the file
+4. Work with data in the file
+
+CSV - Comma Seperated file
+Read,Writing data
+

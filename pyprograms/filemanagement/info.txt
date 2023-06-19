@@ -1,0 +1,5 @@
+Sample File
+Writing sample text
+Writing another sample text
+written using append mode
+written using append mode line 2
