@@ -206,4 +206,28 @@ ttl =cut([10,20,-30,-40,30,-40,50,60])
 print("final")
 print(ttl)
 
+print("cut  final")
+def cutnew(lst):
+    aftercut=[]
+    start = 0
+    end = len(lst)
+    while(start <end):
+        if lst[start]<0:
+            index=(abs(lst[start])-1)+1
+            start = start +index
+        else:
+            aftercut.append(lst[start])
+            start = start +1
+    print(aftercut)
+#cutnew([2,-2,35,30,45,-1,10,20])
+#cutnew([-4, -7, -2, 1, 9])
+#cutnew([-3, -4, 5, -4, 1])
+#cutnew([5, 7, -1, 6, -3, 1, 8, 785, 5, -2, 1, 0, 42])
+#[5, 7, 6, 785, 5, 0, 42]
+#cutnew([7, 4, 0])
+#cutnew([7, 4, -2, 1, 9])
+cutnew([-4, -7, -2, 1, 9])
+
+
+
 

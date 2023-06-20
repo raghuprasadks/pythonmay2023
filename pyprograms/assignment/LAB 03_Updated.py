@@ -75,7 +75,8 @@ def cut(a_list):
         elif lst[0] > 0 and previous:
             return cut(lst[1:], ttl, False)
         elif lst[0] <= 0:
-            return cut(lst[1:], ttl, True)
+            cutindexes = abs(lst[0]-1)
+            return cut(lst[1:cutindexes], ttl, True)
     
     return cut(a_list)
 

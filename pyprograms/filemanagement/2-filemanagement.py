@@ -10,3 +10,4 @@ for line in lines:
         count = count +1
         #pass
 print("total number of words ",count)
+file.close()
