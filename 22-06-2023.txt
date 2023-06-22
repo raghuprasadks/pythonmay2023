@@ -1,0 +1,48 @@
+Object Oriented Concepts
+
+Class 
+Constructure
+Objects
+
+Inheritance
+Polymorphism
+Method overloading
+Method overriding
+
+Abstraction
+Data hiding/encapsulation
+
+
+Parent and child relationship
+Inheritance
+
+Child can inherit the properties and
+functionalities of a parent
+
+Re-usability
+
+Vehicle - no,make,model,owner,color,price
+
+start()
+stop()
+move() - 5 km/hr
+Bike - inherit vehicle
+move() - 10 km/hr
+
+Car - ac,audio
+startac()
+
+C - Procedural
+C++,Java,Python - OOPL
+
+Python - scripting
+ 
+
+
+
+
+
+
+
+
+
