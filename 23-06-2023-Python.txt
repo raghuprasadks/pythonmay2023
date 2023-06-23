@@ -1,0 +1,16 @@
+Python
+Basics - 
+Data Types - str,int,float,boolean
+advanced data types - list,tuple,dictionary,set 
+Operators - 
+arithmetic,comparison,logical
+Loops
+Conditional Statements
+Functions
+Object Oriented programming
+class,object,
+Inheritance - 
+Exceptions
+Filemanagement
+
+
