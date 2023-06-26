@@ -1,0 +1,42 @@
+Hospital Management (hospitalmanagement folder)
+
+
+1. Create Hospital Class 
+
+a. having member variables code,name,location,bedcapacity(100)
+b. Constructure to initialize above member variables
+c. __str__ method to display information about the Hospital
+
+2. Create a Patient class
+a. having member variables id,name,mobile,location
+b. Constructure to initialize above member variables
+c. __str__ method to display information about the Patient
+
+3. Create HospitalManagement class
+having following methods
+
+a. Constructure to initialize patientlist
+
+b. addPatient(patient)
+adds patient to patientlist 
+decrease the bedcapacity
+
+b. listPatient()
+displays list of patients
+
+c. searchByName(name)
+displays the searched patient info
+
+d. searchByLocation(location)
+displays the searched patients by location
+
+e. displayLocationwise()
+display total number of patients for each location
+mysore 10
+bengaluru 20
+mandya 25 
+f. dischargePatient()
+increase the bedcapacity by one
+
+
+

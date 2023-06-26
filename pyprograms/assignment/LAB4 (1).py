@@ -84,22 +84,99 @@ class SortedLinkedList:
                 
     def add(self, value):
         # --- YOUR CODE STARTS HERE
-        pass
+        #pass
+        new_node = Node(value)
 
+        # If the linked list is empty
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+
+        # If the data is smaller than the head
+        elif self.head.value >= new_node.value:
+            new_node.next = self.head
+            self.tail = self.head
+            self.head = new_node
+
+        else:
+            # Locate the node before the insertion point
+            current = self.head
+            #self.tail=current
+            #counter =0
+            while current.next and new_node.value > current.next.value:
+                current = current.next
+
+            # Insertion
+            new_node.next = current.next
+            current.next = new_node
+            curr=self.head
+            while curr.next!=None:
+                curr = curr.next
+            self.tail = curr
 
     def split(self):
         # --- YOUR CODE STARTS HERE
-        pass
+        #pass
+        current = self.head
+        if current is None:
+            return
+        breakpoint=0
+        length=self.__len__()
+        if(self.__len__()%2==0):
+            breakpoint=length//2
+        else:
+            breakpoint = (length // 2)+1
+        sortedlist1=SortedLinkedList()
+        sortedlist2 = SortedLinkedList()
+        #current = self.head
+        counter = 1
+        while current.next:
+            if(counter<=breakpoint):
+                value = current.value
+                sortedlist1.add(value)
+            else:
+                value =current.value
+                sortedlist2.add(value)
+            current=current.next
+            counter = counter+1
+            if(counter==length):
+                sortedlist2.add(current.value)
+
+        return sortedlist1,sortedlist2
+
 
 
     def removeDuplicates(self):
-        # --- YOUR CODE STARTS HERE
-        pass
-    
+        temp = self.head
+        if temp is None:
+            return
+        while temp.next is not None:
+            if temp.value == temp.next.value:
+                new = temp.next.next
+                temp.next = None
+                temp.next = new
+            else:
+                temp = temp.next
 
     def intersection(self, other):
         # --- YOUR CODE STARTS HERE
-        pass
+        #pass
+        intersectionlist=SortedLinkedList()
+        lenlist1 = self.__len__()
+        lenlist2 = other.__len__()
+        current1 = self.head
+        other1 = other.head
+        if (lenlist1>=lenlist2):
+            while(other1.next):
+                valueother = other1.value
+                while (current1.next):
+                    valuecurrent = current1.value
+                    if (valuecurrent ==valueother):
+                        intersectionlist.add(valuecurrent)
+                        break
+                    current1 = current1.next
+                other1=other1.next
+        return intersectionlist
 
 
 

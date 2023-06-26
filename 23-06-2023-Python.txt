@@ -13,4 +13,13 @@ Inheritance -
 Exceptions
 Filemanagement
 
+Product management
+
+adding them list
+searching
+updating
+deleting
+sorting
+
+
 
