@@ -1,0 +1,65 @@
+Database
+
+Application Software
+
+Storing the information
+
+software - database - collection of information(data)
+
+data - text,numeric,picture,file
+
+DBMS- Oracle,MySQL,MS-SQL,DB2,SQLITE
+
+store - create,modify,list,delete
+C - Create
+R - Read
+U - Update
+D - Delete
+
+DMBS - Database Management System
+RDBMS - Relational Data Base Management System
+
+SQLITE
+
+
+ecommerce
+
+database - ecomdb
+
+customer - table
+ id (column) - number - primary key
+ name - text
+ email - text
+ mobile - number
+ address - text
+ location - text
+ zipcode - number
+product 
+- code,name,desc,supplier,price
+
+
+CREATE TABLE "customer" (
+	"id"	INTEGER,
+	"name"	TEXT NOT NULL,
+	"email"	TEXT NOT NULL,
+	"mobile"	INTEGER NOT NULL,
+	"address"	TEXT NOT NULL,
+	"location"	TEXT NOT NULL,
+	"zipcode"	INTEGER NOT NULL,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+
+insert into customer (name,email,mobile,address,location,zipcode) values ('rashmi','rashmi@gmail.com',39393993,'cv raman nagar','bengaluru',560012)
+
+select * from customer
+SELECT * from customer
+
+
+SQL - Structured Query Language - you can work any RDBMS
+
+Download DBBrowser for SQLITE
+
+
+
+
+

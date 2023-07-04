@@ -77,7 +77,7 @@ class Stack:
 
 # Driver code
 if __name__ == "__main__":
-MyStack = Stack()
+	MyStack = Stack()
 
 MyStack.push(11)
 MyStack.push(22)

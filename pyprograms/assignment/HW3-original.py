@@ -3,17 +3,16 @@
 
 class Node:
     def __init__(self, value):
-        self.value = value
-        self.next = None
-
+        self.value = value  
+        self.next = None 
+    
     def __str__(self):
-        return "Node({})".format(self.value)
+        return "Node({})".format(self.value) 
 
     __repr__ = __str__
+                          
 
-
-# =============================================== Part I ==============================================
-
+#=============================================== Part I ==============================================
 class Stack:
     '''
         >>> x=Stack()
@@ -98,11 +97,12 @@ class Stack:
             return self.top.value
 
 
-# =============================================== Part II ==============================================
+#=============================================== Part II ==============================================
 
 class Calculator:
     def __init__(self):
         self.__expr = None
+
 
     @property
     def getExpr(self):
@@ -110,7 +110,7 @@ class Calculator:
 
     def setExpr(self, new_expr):
         if isinstance(new_expr, str):
-            self.__expr = new_expr
+            self.__expr=new_expr
         else:
             print('setExpr error: Invalid expression')
             return None
@@ -126,11 +126,16 @@ class Calculator:
             False
         '''
         # YOUR CODE STARTS HERE
+        #pass
         try:
             float(txt)
             return True
         except ValueError:
             return False
+
+
+
+
 
     def _getPostfix(self, txt):
         '''
@@ -214,12 +219,13 @@ class Calculator:
 
         return ' '.join(postfixStack)
 
+
     @property
     def calculate(self):
         '''
             calculate must call _getPostfix
             calculate must create and use a Stack to compute the final result as shown in the video lecture
-
+            
             >>> x=Calculator()
             >>> x.setExpr('4        + 3 -       2')
             >>> x.calculate
@@ -251,10 +257,10 @@ class Calculator:
             >>> x.setExpr(' 2.5 +         3 * (2 + ( 3.0) * ( 5^2-2 * 3 ^ ( 2 )         ) * ( 4 ) ) * ( 2 / 8 + 2 * ( 3 - 1 /3 ) ) - 2 / 3^ 2')
             >>> x.calculate
             1442.7777777777778
-
+            
 
             # In invalid expressions, you might print an error message, but code must return None, adjust doctest accordingly
-            >>> x.setExpr(" 4 ++ 3+ 2")
+            >>> x.setExpr(" 4 ++ 3+ 2") 
             >>> x.calculate
             >>> x.setExpr("4  3 +2")
             >>> x.calculate
@@ -264,58 +270,48 @@ class Calculator:
             >>> x.calculate
             >>> x.setExpr(' ) 2 ( *10 - 3 * ( 2 - 3 * 2 ) ')
             >>> x.calculate
-            >>> x.setExpr('(    3.5 ) ( 15 )')
+            >>> x.setExpr('(    3.5 ) ( 15 )') 
             >>> x.calculate
-            >>> x.setExpr('3 ( 5) - 15 + 85 ( 12)')
+            >>> x.setExpr('3 ( 5) - 15 + 85 ( 12)') 
             >>> x.calculate
-            >>> x.setExpr("( -2/6) + ( 5 ( ( 9.4 )))")
+            >>> x.setExpr("( -2/6) + ( 5 ( ( 9.4 )))") 
             >>> x.calculate
         '''
 
-        if not isinstance(self.__expr, str) or len(self.__expr) <= 0:
+        if not isinstance(self.__expr,str) or len(self.__expr)<=0:
             print("Argument error in calculate")
             return None
 
-        def apply_operator(operand1, operand2, operator):
-            if operator == '+':
-                return operand1 + operand2
-            elif operator == '-':
-                return operand1 - operand2
-            elif operator == '*':
-                return operand1 * operand2
-            elif operator == '/':
-                return operand1 / operand2
-            elif operator == '^':
-                return operand1 ** operand2
+        calcStack = Stack()   # method must use calcStack to compute the  expression
 
-        postfix = self._getPostfix(self.__expr)
-        if postfix is None:
-            return None
+        # YOUR CODE STARTS HERE
+        #pass
+        expression = self.getExpr()
+        postfix =self._getPostfix(expression)
+        strconv = postfix.split(' ')
+        for i in strconv:
 
-        calcStack = Stack()
+            # If the component of the list is an integer
+            try:
+                calcStack.push(int(i))
 
-        tokens = postfix.split()
+            # If the component of the list is not an integer,
+            # it must be an operator. Using ValueError, we can
+            # evaluate components of the list other than type int
+            except ValueError:
+                val1 = calcStack.pop()
+                val2 = calcStack.pop()
+                if i == '/':
+                    calcStack.push(val2 / val1)
+                else:
 
-        for token in tokens:
-            if self._isNumber(token):
-                calcStack.push(float(token))
-            else:
-                if calcStack.size() < 2:
-                    print('Invalid expression: Insufficient operands')
-                    return None
-                operand2 = calcStack.pop()
-                operand1 = calcStack.pop()
-                result = apply_operator(operand1, operand2, token)
-                calcStack.push(result)
+                    # Switch statement to perform operation
+                    switcher = {'+': val2 + val1, '-': val2 -
+                                                       val1, '*': val2 * val1, '^': val2 ** val1}
+                    calcStack.push(switcher.get(i))
+            return int(self.pop())
 
-        if calcStack.size() != 1:
-            print('Invalid expression: Too many operands')
-            return None
-
-        return calcStack.pop()
-
-
-# =============================================== Part III ==============================================
+#=============================================== Part III ==============================================
 
 class AdvancedCalculator:
     '''
@@ -352,7 +348,6 @@ class AdvancedCalculator:
         >>> C.states == {}
         True
     '''
-
     def __init__(self):
         self.expressions = ''
         self.states = {}
@@ -374,9 +369,8 @@ class AdvancedCalculator:
             False
         '''
         # YOUR CODE STARTS HERE
-        if word.isalpha() and not word.isdigit() and word[0].isalpha():
-            return True
-        return False
+        pass
+       
 
     def _replaceVariables(self, expr):
         '''
@@ -391,57 +385,14 @@ class AdvancedCalculator:
             '28.0 - 23.0'
         '''
         # YOUR CODE STARTS HERE
-        words = expr.split()
-        for i, word in enumerate(words):
-            if self._isVariable(word):
-                if word in self.states:
-                    words[i] = str(self.states[word])
-                else:
-                    print(f'Variable {word} not found')
-                    return None
-        return ' '.join(words)
+        pass
 
+    
     def calculateExpressions(self):
-        self.states = {}
-        calcObj = Calculator()  # method must use calcObj to compute each expression
+        self.states = {} 
+        calcObj = Calculator()     # method must use calcObj to compute each expression
         # YOUR CODE STARTS HERE
-        expressions = self.expressions.split(';')
-        results = {}
-
-        for expression in expressions:
-            expression = expression.strip()
-            if expression.startswith('return'):
-                result_expr = expression[7:].strip()
-                result_expr = self._replaceVariables(result_expr)
-
-                if result_expr is None:
-                    return None
-
-                calcObj.setExpr(result_expr)
-                result = calcObj.calculate
-                results['_return_'] = result
-                break
-
-            assignment = expression.split('=')
-            if len(assignment) != 2:
-                print('Invalid expression:', expression)
-                return None
-
-            var_name = assignment[0].strip()
-            expr = assignment[1].strip()
-            expr = self._replaceVariables(expr)
-
-            if expr is None:
-                return None
-
-            calcObj.setExpr(expr)
-            result = calcObj.calculate
-            self.states[var_name] = result
-            results[expression] = self.states.copy()
-
-        return results
-
-
+        pass
 def run_tests():
     import doctest
 
